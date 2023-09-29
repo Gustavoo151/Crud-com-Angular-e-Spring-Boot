@@ -3,10 +3,10 @@
 @include mat-core();
 
 $custom-app-primary: mat-palette($mat-teal);
-$custom-app-secondary: mat-palette($mat-teal, A100, A700);
+$custom-app-accent: mat-palette($mat-teal, 700, 900);
 $custom-app-warn: mat-palette($mat-red);
 
-$custom-theme: mat-dark-theme($custom-app-primary, $custom-app-secondary, $custom-app-warn);
+$custom-theme: mat-light-theme($custom-app-primary, $custom-app-accent, $custom-app-warn);
 
 @include angular-material-theme($custom-theme);
 
