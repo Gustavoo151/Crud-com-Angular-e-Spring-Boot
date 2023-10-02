@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class CoursesComponent implements OnInit {
 
   // Normalmente inicializamos as variáveis com tipo quando elas estão vazias.
-  courses: Observable<Course[]>;
+  courses$: Observable<Course[]>;  // Usar o $ é para indicar por conversão que estamos trabalhando com um observable.
     // No Angular temos sempre que inicializar o variável
   displayedColumns = ['name', 'category'];  // Declaração das colunas que vão aparecer na tabela.
 
@@ -21,7 +21,7 @@ export class CoursesComponent implements OnInit {
   constructor(private coursesService: CoursesService) {   // Construtor da classe para fazer injeção de depencia automatica.
     // this.courses = [];  // Pode também inicialiar assim.
     // this.coursesService = new CoursesService();  // Fazendo injeção de dependecia na mão
-    this.courses = this.coursesService.list();  // Pegando a lista
+    this.courses$ = this.coursesService.list();  // Pegando a lista
   }
 
   ngOnInit(): void {
