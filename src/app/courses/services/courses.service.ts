@@ -11,7 +11,7 @@ import { delay, first, tap } from 'rxjs';
 })
 export class CoursesService {
 
-  private readonly API = '/assets/cursos.json'; // Essa variável API que vai ser apenas para leitura vai receber o caminho da URI desejada.
+  private readonly API = '/assets/acursos.json'; // Essa variável API que vai ser apenas para leitura vai receber o caminho da URI desejada.
 
 
   constructor(private httpClient: HttpClient) { }  // Com isso declarado esse httpClient vai ser fornecido automaticamente para a gente só fazendo a declaração no construtor. Isso se chama injeção de depedencia.

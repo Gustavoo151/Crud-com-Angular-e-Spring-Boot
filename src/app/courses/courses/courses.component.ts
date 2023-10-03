@@ -1,7 +1,8 @@
-import { CoursesService } from './../services/courses.service';
 import { Component, OnInit } from '@angular/core';
+import { catchError, Observable, of } from 'rxjs';
+
 import { Course } from '../model/course';
-import { Observable } from 'rxjs';
+import { CoursesService } from './../services/courses.service';
 
 @Component({  // Essa anotation sinaliza para o Angular que essa classe será um component
   selector: 'app-courses',
@@ -21,7 +22,15 @@ export class CoursesComponent implements OnInit {
   constructor(private coursesService: CoursesService) {   // Construtor da classe para fazer injeção de depencia automatica.
     // this.courses = [];  // Pode também inicialiar assim.
     // this.coursesService = new CoursesService();  // Fazendo injeção de dependecia na mão
-    this.courses$ = this.coursesService.list();  // Pegando a lista
+    this.courses$ = this.coursesService.list()// Pegando a lista
+    .pipe(
+      catchError(error => {
+        console.log(error);
+        return of([])
+      })
+    );
+
+
   }
 
   ngOnInit(): void {
