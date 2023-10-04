@@ -20,7 +20,7 @@ export class CoursesService {
     // No método get vamos passar a Url ou Uri para obter os dados que precisamos.
     return this.httpClient.get<Course[]>(this.API).pipe(
       first(), // O Fisrt vai pegar a primeira requisição do HTTP e finalizar
-      delay(5000), // Delay para testar o loading está funcionando.
+      // delay(5000), // Delay para testar o loading está funcionando.
       tap((courses) => console.log(courses))
     ); // O pipe (cano) vai servir para que ante de eu retornar a informação final eu posso manipular essa informação de maneira reativa atulizando programação reativa. Onde eu vou ultilizar operadores do rxjs para que eu possa fazer essa manipulação da maneira que for necessária. Então os dados vão passar por essa cano lá eles podem ser manipulado e no final a gente vai retornar o resultado final.
   }

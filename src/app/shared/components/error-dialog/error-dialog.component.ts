@@ -10,3 +10,4 @@ export class ErrorDialogComponent {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: string) {}
 }
+  
