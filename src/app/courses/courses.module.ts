@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CoursesRoutingModule } from './courses-routing.module';
 import { CoursesComponent } from './courses/courses.component';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AppMaterialModule } from '../shared/app-material/app-material.module';
   imports: [  // Aqui é onde eu faço as importações sempre que eu queira usar alguma coisa do material.angula eu devo colocar aqui o import.
     CommonModule,
      CoursesRoutingModule,
-     AppMaterialModule   // Importando todos o modulos da classse app-material.module em shared.
+     AppMaterialModule,   // Importando todos o modulos da classse app-material.module em shared.
+     SharedModule
     ]
 })
 export class CoursesModule {}
